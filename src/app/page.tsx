@@ -1,6 +1,7 @@
 import { ScenarioCard } from '@/components/ScenarioCard'
 import { FooterNav } from '@/components/FooterNav'
-import type { ReactNode } from 'react'
+import SplashScreen from '@/components/SplashScreen'
+import { useEffect, useState, type ReactNode } from 'react'
 
 interface Scenario {
   id: string
@@ -15,6 +16,17 @@ export default function Home() {
     { id: 'mental-health', title: 'A Mental Health Crisis', icon: '😔' },
     { id: 'supplies', title: 'Need Harm Reduction Supplies', icon: '🧰' },
   ]
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 2000)
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (loading) {
+    return <SplashScreen />
+  }
+
   return (
     <main className="p-4 pb-32 space-y-6">
       <h1 className="text-center text-lg font-semibold mt-2">
