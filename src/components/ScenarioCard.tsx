@@ -1,12 +1,15 @@
+'use client'
+
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ChevronRight } from 'lucide-react'
-import { ReactNode } from 'react'
+import type { LucideIcon } from 'lucide-react'
+import { createElement } from 'react'
 
 interface Scenario {
   id: string
   title: string
-  icon: ReactNode
+  icon: LucideIcon
 }
 
 export function ScenarioCard({ scenario }: { scenario: Scenario }) {
@@ -18,7 +21,7 @@ export function ScenarioCard({ scenario }: { scenario: Scenario }) {
       >
         <div className="flex items-center gap-3">
           <span className="text-2xl" aria-hidden="true">
-            {scenario.icon}
+            {createElement(scenario.icon)}
           </span>
           <span className="font-medium">{scenario.title}</span>
         </div>
