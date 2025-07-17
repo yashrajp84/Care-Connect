@@ -1,12 +1,13 @@
 export type CTAButtonVariant = "primary" | "secondary" | "danger" | "link";
 
-import type { LucideIcon } from "lucide-react";
+
+import type { ReactNode } from 'react'
 
 export interface CTADetails {
   label: string;
   href: string;
   variant: CTAButtonVariant;
-  icon?: LucideIcon;
+  icon?: ReactNode;
 }
 
 export interface SubScenario {
@@ -19,6 +20,6 @@ export interface SubScenario {
 export interface Scenario {
   id: string;
   title: string;
-  icon: LucideIcon;
+  icon: ReactNode;
   subScenarios: Record<string, SubScenario>;
 }
