@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { getScenarioData } from '@/lib/loadCSV'
+import { loadScenariosFromCSV } from '@/lib/loadCSV'
 
 interface Params { scenarioId: string }
 
 export default function ScenarioPage({ params }: { params: Params }) {
-  const data = getScenarioData().filter(
+  const data = loadScenariosFromCSV().filter(
     (r) => r.scenario_id === params.scenarioId
   )
   if (data.length === 0) notFound()

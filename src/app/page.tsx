@@ -1,11 +1,11 @@
 import { ScenarioCard } from '@/components/ScenarioCard'
 import { FooterNav } from '@/components/FooterNav'
-import { getScenarioData } from '@/lib/loadCSV'
+import { loadScenariosFromCSV } from '@/lib/loadCSV'
 import { scenarios as iconScenarios } from '@/constants/scenarios'
 import type { Scenario } from '@/types/scenario'
 
 export default function Home() {
-  const data = getScenarioData()
+  const data = loadScenariosFromCSV()
   const unique = Array.from(
     data.reduce((map, row) => {
       if (!map.has(row.scenario_id)) map.set(row.scenario_id, row)
