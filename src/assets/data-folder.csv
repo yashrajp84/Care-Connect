@@ -1,0 +1,5 @@
+scenario_id,scenario_title,subscenario_id,subscenario_title,body_text,cta_text,cta_link,selfcare_text
+overdose,Suspected Drug Overdose,in-public,Someone collapsed in public,"If someone appears unconscious, unresponsive, or turning blue, follow the steps below.",Call 000,tel:000,Breathe — you acted quickly. Help is on the way.
+overdose,Suspected Drug Overdose,at-home,Someone overdosing at home,"If someone you know has overdosed at home, it’s critical to stay calm and act fast.",Call emergency services,tel:000,You stayed strong when it mattered. Take a moment to look after yourself.
+needles,Used Needles & Syringes,public-park,Found a needle in public park,You found used injecting equipment. It’s okay to feel uneasy. Here's what to do next.,Call Richmond Housing,tel:0394289725,You did the right thing. Thank you for protecting your community.
+aggression,Challenging Behaviours,on-street,Someone acting aggressively,It’s normal to feel unsafe around aggressive behavior. Distance yourself first.,Call 000,tel:000,Prioritizing your safety is brave. Well done.
