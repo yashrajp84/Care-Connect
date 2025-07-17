@@ -21,7 +21,7 @@ export default function Home() {
 
   return (
     <main className="p-4 pb-32 space-y-6">
-      <h1 className="text-center text-lg font-semibold mt-2">
+      <h1 className="text-left font-size-48px font-semibold ">
         Tell us what you are witnessing, and we help you connect
       </h1>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">

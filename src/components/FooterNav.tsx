@@ -24,7 +24,6 @@ export function FooterNav() {
           </Link>
         ))}
       </nav> as JSX.Element
-      <div className={styles.footerText}>www.careconnectnrch.com.au</div>
     </>
   )
 }
