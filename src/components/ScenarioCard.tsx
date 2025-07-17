@@ -1,18 +1,29 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { ChevronRight } from 'lucide-react'
+import { ReactNode } from 'react'
 
 interface Scenario {
   id: string
   title: string
+  icon: ReactNode
 }
 
 export function ScenarioCard({ scenario }: { scenario: Scenario }) {
   return (
-    <motion.div whileHover={{ scale: 1.02 }} className="border p-4 rounded-lg">
-      <h2 className="text-lg font-semibold mb-2">{scenario.title}</h2>
-      <Link href={`/scenarios/${scenario.id}`} className="text-primary underline">
-        View
-      </Link>
-    </motion.div>
+    <Link href={`/scenarios/${scenario.id}`}> 
+      <motion.div
+        whileHover={{ scale: 1.03 }}
+        className="bg-white rounded-lg shadow flex items-center justify-between p-4"
+      >
+        <div className="flex items-center gap-3">
+          <span className="text-2xl" aria-hidden="true">
+            {scenario.icon}
+          </span>
+          <span className="font-medium">{scenario.title}</span>
+        </div>
+        <ChevronRight className="text-gray-400" size={20} />
+      </motion.div>
+    </Link>
   )
 }
