@@ -1,0 +1,45 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  border-radius: var(--radius-default);
+  padding: var(--spacing-sm) var(--spacing-md);
+  transition: all 0.2s ease;
+}
+.fullWidth {
+  width: 100%;
+}
+.primary {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+.primary:hover {
+  opacity: 0.9;
+}
+.danger {
+  background-color: var(--color-danger);
+  color: #fff;
+}
+.danger:hover {
+  opacity: 0.9;
+}
+.secondary {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+.secondary:hover {
+  opacity: 0.9;
+}
+.link {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+.link:hover {
+  opacity: 0.8;
+}
+.iconLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}

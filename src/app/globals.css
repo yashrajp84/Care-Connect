@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import '../styles/tokens.css';
+
 :root {
-  --color-primary: #005FA3;
   --color-accent: #79B435;
 }

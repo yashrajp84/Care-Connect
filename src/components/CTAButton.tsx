@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
-import { designTokens } from '@/constants/designTokens'
+import styles from './CTAButton.module.css'
 
 export interface CTAButtonProps {
   label: string
@@ -13,17 +13,19 @@ export interface CTAButtonProps {
   fullWidth?: boolean
 }
 
-const baseStyles = 'inline-flex items-center justify-center font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 transition'
-
 const variants: Record<Required<CTAButtonProps>['variant'], string> = {
-  primary: `bg-[${designTokens.colors.primary}] text-white hover:bg-[${designTokens.colors.primary}]/90`,
-  secondary: `bg-[${designTokens.colors.accent}] text-white hover:bg-[${designTokens.colors.accent}]/90`,
-  danger: 'bg-red-600 text-white hover:bg-red-700',
-  link: `underline text-[${designTokens.colors.primary}] hover:text-[${designTokens.colors.primary}]/80`
+  primary: styles.primary,
+  secondary: styles.secondary,
+  danger: styles.danger,
+  link: styles.link
 }
 
 export function CTAButton({ label, variant = 'primary', icon, href, fullWidth }: CTAButtonProps) {
-  const className = cn(baseStyles, variants[variant], fullWidth && 'w-full', 'px-4 py-3 shadow', 'rounded',)
+  const className = cn(
+    styles.button,
+    variants[variant],
+    fullWidth && styles.fullWidth,
+  )
 
   // Determine if the link is external (e.g. tel: or http)
   const isExternal = href.startsWith('http') || href.startsWith('tel:') || href.startsWith('mailto:')
@@ -38,7 +40,7 @@ export function CTAButton({ label, variant = 'primary', icon, href, fullWidth }:
   */
 
   const content = (
-    <motion.span whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="flex items-center gap-2">
+    <motion.span whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className={styles.iconLabel}>
       {icon}
       {label}
     </motion.span>
@@ -46,14 +48,14 @@ export function CTAButton({ label, variant = 'primary', icon, href, fullWidth }:
 
   if (isExternal) {
     return (
-      <a href={href} className={className} style={{ transition: designTokens.transitions.default }}>
+      <a href={href} className={className} aria-label={label}>
         {content}
       </a>
     )
   }
 
   return (
-    <Link href={href} className={className} style={{ transition: designTokens.transitions.default }}>
+    <Link href={href} className={className} aria-label={label}>
       {content}
     </Link>
   )

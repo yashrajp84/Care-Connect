@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { LayoutGrid, Info, BookOpen, Heart } from 'lucide-react'
+import styles from './FooterNav.module.css'
 
 export function FooterNav() {
   const items = [
@@ -10,23 +11,20 @@ export function FooterNav() {
   ]
   return (
     <>
-      <nav role="navigation" className="fixed bottom-10 inset-x-0 mx-4 bg-white shadow rounded-full flex justify-around items-center py-2 text-xs">
+      <nav role="navigation" className={styles.navContainer}>
         {items.map((item) => (
-          <Link
-            key={item.label}
-            href={item.href}
-            className={`flex flex-col items-center gap-1 ${
-              item.active ? 'text-blue-700' : 'text-gray-500'
-            }`}
-          >
+            <Link
+              key={item.label}
+              href={item.href}
+              aria-label={item.label}
+              className={item.active ? styles.link : `${styles.link} ${styles.linkInactive}`}
+            >
             <item.icon size={18} />
             {item.label}
           </Link>
         ))}
       </nav> as JSX.Element
-      <div className="fixed bottom-0 inset-x-0 bg-black text-white text-center text-xs py-1">
-        www.careconnectnrch.com.au
-      </div>
+      <div className={styles.footerText}>www.careconnectnrch.com.au</div>
     </>
   )
 }
