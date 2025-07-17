@@ -3,13 +3,12 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ChevronRight } from 'lucide-react'
-import type { LucideIcon } from 'lucide-react'
-import { createElement } from 'react'
+import type { ReactNode } from 'react'
 
 interface Scenario {
   id: string
   title: string
-  icon: LucideIcon
+  icon: ReactNode
 }
 
 export function ScenarioCard({ scenario }: { scenario: Scenario }) {
@@ -20,9 +19,7 @@ export function ScenarioCard({ scenario }: { scenario: Scenario }) {
         className="bg-white rounded-lg shadow flex items-center justify-between p-4"
       >
         <div className="flex items-center gap-3">
-          <span className="text-2xl" aria-hidden="true">
-            {createElement(scenario.icon)}
-          </span>
+          <span className="text-2xl" aria-hidden="true">{scenario.icon}</span>
           <span className="font-medium">{scenario.title}</span>
         </div>
         <ChevronRight className="text-gray-400" size={20} />

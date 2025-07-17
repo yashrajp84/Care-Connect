@@ -3,14 +3,13 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
-import type { LucideIcon } from 'lucide-react'
 import { designTokens } from '@/constants/designTokens'
 
 export interface CTAButtonProps {
   label: string
   href: string
   variant?: 'primary' | 'danger' | 'secondary' | 'link'
-  icon?: LucideIcon
+  icon?: React.ReactNode
   fullWidth?: boolean
 }
 
@@ -38,10 +37,9 @@ export function CTAButton({ label, variant = 'primary', icon, href, fullWidth }:
     end
   */
 
-  const Icon = icon
   const content = (
     <motion.span whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }} className="flex items-center gap-2">
-      {Icon && <Icon size={16} aria-hidden="true" />}
+      {icon}
       {label}
     </motion.span>
   )
