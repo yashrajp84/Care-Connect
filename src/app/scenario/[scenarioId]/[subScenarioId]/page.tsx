@@ -1,7 +1,7 @@
 import { CTAButton } from '@/components/CTAButton'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { getScenarioData } from '@/lib/loadCSV'
+import { loadScenariosFromCSV } from '@/lib/loadCSV'
 
 interface Params {
   scenarioId: string
@@ -9,7 +9,7 @@ interface Params {
 }
 
 export default function SubScenarioPage({ params }: { params: Params }) {
-  const row = getScenarioData().find(
+  const row = loadScenariosFromCSV().find(
     (r) =>
       r.scenario_id === params.scenarioId &&
       r.subscenario_id === params.subscenarioId

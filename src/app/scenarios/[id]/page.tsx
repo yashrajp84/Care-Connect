@@ -1,23 +1,28 @@
-import { EmergencyButton } from '@/components/EmergencyButton'
-import { supabase } from '@/lib/supabaseClient'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { loadScenariosFromCSV } from '@/lib/loadCSV'
 
 interface Params { id: string }
 
-export default async function Scenario({ params }: { params: Params }) {
-  const { data } = await supabase
-    .from('scenarios')
-    .select('*')
-    .eq('id', params.id)
-    .single()
-
-  if (!data) notFound()
+export default function Scenario({ params }: { params: Params }) {
+  const data = loadScenariosFromCSV().filter((r) => r.scenario_id === params.id)
+  if (data.length === 0) notFound()
 
   return (
-    <main className="p-4">
-      <h1 className="text-2xl font-bold mb-2">{data.title}</h1>
-      <p className="mb-4">{data.body}</p>
-      <EmergencyButton />
+    <main className="p-4 space-y-4">
+      <h1 className="text-xl font-semibold">{data[0].scenario_title}</h1>
+      <ul className="space-y-2">
+        {data.map((sub) => (
+          <li key={sub.subscenario_id}>
+            <Link
+              href={`/scenarios/${sub.scenario_id}/${sub.subscenario_id}`}
+              className="block p-4 rounded shadow bg-white"
+            >
+              {sub.subscenario_title}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </main>
   )
 }
