@@ -1,0 +1,27 @@
+.card {
+  background-color: #fff;
+  border-radius: var(--radius-default);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md);
+  transition: transform 0.2s ease;
+}
+.card:hover {
+  transform: scale(1.03);
+}
+.content {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+.icon {
+  font-size: 1.5rem;
+}
+.title {
+  font-weight: 500;
+}
+.chevron {
+  color: gray;
+}

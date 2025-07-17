@@ -11,6 +11,18 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ['var(--font-inter)', ...fontFamily.sans]
+      },
+      colors: {
+        primary: 'var(--color-primary)',
+        danger: 'var(--color-danger)'
+      },
+      borderRadius: {
+        DEFAULT: 'var(--radius-default)'
+      },
+      spacing: {
+        sm: 'var(--spacing-sm)',
+        md: 'var(--spacing-md)',
+        lg: 'var(--spacing-lg)'
       }
     }
   },

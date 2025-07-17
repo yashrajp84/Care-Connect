@@ -33,14 +33,16 @@ export default function Home() {
         <p className="font-medium">If Inside NRCH Premises</p>
         <a
           href="tel:0394289725"
-          className="block mx-auto w-full max-w-xs bg-green-600 text-white py-3 rounded-full shadow"
+          aria-label="Call 03 9428 9725"
+          className="block mx-auto w-full max-w-xs bg-[var(--color-accent)] text-white py-3 rounded-full shadow"
         >
           Call 03 9428 9725
         </a>
         <p>Dial 000 in case of emergency</p>
         <a
           href="tel:000"
-          className="block mx-auto w-full max-w-xs border border-red-600 text-red-600 py-3 rounded-full"
+          aria-label="Call 000"
+          className="block mx-auto w-full max-w-xs border border-[var(--color-danger)] text-[var(--color-danger)] py-3 rounded-full"
         >
           Call 000
         </a>

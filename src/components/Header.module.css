@@ -1,0 +1,25 @@
+.header {
+  background-color: #1f2c3e;
+  color: #fff;
+  border-bottom: 4px solid var(--color-accent);
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.title {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1;
+}
+.subtitle {
+  font-size: 0.875rem;
+}
+.langButton {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  color: inherit;
+}
