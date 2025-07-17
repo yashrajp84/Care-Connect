@@ -10,7 +10,7 @@ export function FooterNav() {
   ]
   return (
     <>
-      <nav className="fixed bottom-10 inset-x-0 mx-4 bg-white shadow rounded-full flex justify-around items-center py-2 text-xs">
+      <nav role="navigation" className="fixed bottom-10 inset-x-0 mx-4 bg-white shadow rounded-full flex justify-around items-center py-2 text-xs">
         {items.map((item) => (
           <Link
             key={item.label}
@@ -23,7 +23,7 @@ export function FooterNav() {
             {item.label}
           </Link>
         ))}
-      </nav>
+      </nav> as JSX.Element
       <div className="fixed bottom-0 inset-x-0 bg-black text-white text-center text-xs py-1">
         www.careconnectnrch.com.au
       </div>
