@@ -1,24 +1,23 @@
-"use client"
-
 import { ScenarioCard } from '@/components/ScenarioCard'
 import { FooterNav } from '@/components/FooterNav'
-import SplashScreen from '@/components/SplashScreen'
-import { useEffect, useState } from 'react'
-import { scenarios } from '@/constants/scenarios'
+import { getScenarioData } from '@/lib/loadCSV'
+import { scenarios as iconScenarios } from '@/constants/scenarios'
 import type { Scenario } from '@/types/scenario'
 
 export default function Home() {
-  const list: Scenario[] = Object.values(scenarios)
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000)
-    return () => clearTimeout(timer)
-  }, [])
-
-  if (loading) {
-    return <SplashScreen />
-  }
+  const data = getScenarioData()
+  const unique = Array.from(
+    data.reduce((map, row) => {
+      if (!map.has(row.scenario_id)) map.set(row.scenario_id, row)
+      return map
+    }, new Map<string, typeof data[number]>())
+  ).map(([_, row]) => row)
+  const list: Scenario[] = unique.map((row) => ({
+    id: row.scenario_id,
+    title: row.scenario_title,
+    icon: iconScenarios[row.scenario_id]?.icon ?? iconScenarios['overdose'].icon,
+    subScenarios: {}
+  }))
 
   return (
     <main className="p-4 pb-32 space-y-6">

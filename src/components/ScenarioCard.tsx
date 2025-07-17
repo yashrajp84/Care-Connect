@@ -14,7 +14,7 @@ interface Scenario {
 
 export function ScenarioCard({ scenario }: { scenario: Scenario }) {
   return (
-    <Link href={`/scenarios/${scenario.id}`}> 
+    <Link href={`/scenario/${scenario.id}`}> 
       <motion.div
         whileHover={{ scale: 1.03 }}
         className="bg-white rounded-lg shadow flex items-center justify-between p-4"

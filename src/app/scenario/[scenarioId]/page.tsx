@@ -1,0 +1,30 @@
+import Link from 'next/link'
+import { notFound } from 'next/navigation'
+import { getScenarioData } from '@/lib/loadCSV'
+
+interface Params { scenarioId: string }
+
+export default function ScenarioPage({ params }: { params: Params }) {
+  const data = getScenarioData().filter(
+    (r) => r.scenario_id === params.scenarioId
+  )
+  if (data.length === 0) notFound()
+
+  return (
+    <main className="p-4 space-y-4">
+      <h1 className="text-xl font-semibold">{data[0].scenario_title}</h1>
+      <ul className="space-y-2">
+        {data.map((sub) => (
+          <li key={sub.subscenario_id}>
+            <Link
+              href={`/scenario/${sub.scenario_id}/${sub.subscenario_id}`}
+              className="block p-4 rounded shadow bg-white"
+            >
+              {sub.subscenario_title}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </main>
+  )
+}
