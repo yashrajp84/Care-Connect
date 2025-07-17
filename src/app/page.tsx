@@ -1,21 +1,14 @@
+"use client"
+
 import { ScenarioCard } from '@/components/ScenarioCard'
 import { FooterNav } from '@/components/FooterNav'
 import SplashScreen from '@/components/SplashScreen'
-import { useEffect, useState, type ReactNode } from 'react'
-
-interface Scenario {
-  id: string
-  title: string
-  icon: ReactNode
-}
+import { useEffect, useState } from 'react'
+import { scenarios } from '@/constants/scenarios'
+import type { Scenario } from '@/types/scenario'
 
 export default function Home() {
-  const scenarios: Scenario[] = [
-    { id: 'overdose', title: 'A Drug Overdose', icon: '💊' },
-    { id: 'aggressive', title: 'Someone Is Acting Aggressively', icon: '😡' },
-    { id: 'mental-health', title: 'A Mental Health Crisis', icon: '😔' },
-    { id: 'supplies', title: 'Need Harm Reduction Supplies', icon: '🧰' },
-  ]
+  const list: Scenario[] = Object.values(scenarios)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -33,7 +26,7 @@ export default function Home() {
         Tell us what you are witnessing, and we help you connect
       </h1>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {scenarios.map((s) => (
+        {list.map((s) => (
           <ScenarioCard key={s.id} scenario={s} />
         ))}
       </div>
