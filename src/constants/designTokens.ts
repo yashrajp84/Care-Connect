@@ -29,10 +29,7 @@ export const designTokens = {
   },
   transitions: {
     default: 'all 0.2s ease-in-out'
-  },
-color-accents 
-
   }
-
 } as const
+
 export type DesignTokens = typeof designTokens
