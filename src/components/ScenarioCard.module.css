@@ -7,6 +7,8 @@
   justify-content: space-between;
   padding: var(--spacing-md);
   transition: transform 0.2s ease;
+  border-color: var(--color-accent);
+  border-width: 1px;
 }
 .card:hover {
   transform: scale(1.03);

@@ -10,14 +10,14 @@ export const designTokens = {
     xl: '1.25rem'
   },
   radii: {
-    sm: '0.25rem',
+    sm: '1rem',
     md: '0.375rem',
     lg: '0.5rem',
     full: '9999px'
   },
   shadows: {
-    sm: '0 1px 2px rgba(0,0,0,0.05)',
-    md: '0 4px 6px rgba(0,0,0,0.1)'
+    sm: '0px 0px 11.9px rgba(177, 177, 177, 0.22)',
+    md: '0px 0px 11.9px rgba(177, 177, 177, 0.22)'
   },
   spacing: {
     1: '0.25rem',
@@ -29,6 +29,10 @@ export const designTokens = {
   },
   transitions: {
     default: 'all 0.2s ease-in-out'
+  },
+color-accents 
+
   }
+
 } as const
 export type DesignTokens = typeof designTokens
