@@ -9,21 +9,20 @@ export function FooterNav() {
     { href: '/learn', label: 'Learn', icon: BookOpen },
     { href: '/support', label: 'Support', icon: Heart },
   ]
+
   return (
-    <>
-      <nav role="navigation" className={styles.navContainer}>
-        {items.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              aria-label={item.label}
-              className={item.active ? styles.link : `${styles.link} ${styles.linkInactive}`}
-            >
-            <item.icon size={18} />
-            {item.label}
-          </Link>
-        ))}
-      </nav> as JSX.Element
-    </>
+    <nav role="navigation" className={styles.navContainer}>
+      {items.map((item) => (
+        <Link
+          key={item.label}
+          href={item.href}
+          aria-label={item.label}
+          className={item.active ? styles.link : `${styles.link} ${styles.linkInactive}`}
+        >
+          <item.icon size={18} />
+          {item.label}
+        </Link>
+      ))}
+    </nav>
   )
 }
