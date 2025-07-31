@@ -13,7 +13,7 @@ export default function DrugOverdosePage() {
           <StepAccordion key={idx} title={`Step ${idx + 1}`} content={step} />
         ))}
       </div>
-      <CTAButton label="Call 000" href="tel:000" fullWidth />
+      <CTAButton label="Call 000" href="tel:0456785915" fullWidth />
     </main>
   )
 }
