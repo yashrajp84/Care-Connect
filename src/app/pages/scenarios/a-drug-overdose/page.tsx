@@ -19,14 +19,14 @@ export default function DrugOverdosePage() {
       </div>
 
       <div className="grid grid-cols-2 gap-3">
-        <Link href="/scenarios/drug-overdose/unconscious">
+        <Link href="/pages/scenarios/a-drug-overdose/subscenarios?state=unconscious">
           <div className="rounded-xl border p-3 text-center shadow-md space-y-2">
             <img src="/icons/emergency-red.svg" alt="" className="w-6 h-6 mx-auto" />
             <span className="font-semibold text-blue-900">Unconscious</span>
           </div>
         </Link>
 
-        <Link href="/scenarios/drug-overdose/breathing">
+        <Link href="/pages/scenarios/a-drug-overdose/subscenarios?state=breathing">
           <div className="rounded-xl border p-3 text-center shadow-md space-y-2">
             <img src="/icons/emergency-red.svg" alt="" className="w-6 h-6 mx-auto" />
             <span className="font-semibold text-blue-900">Breathing</span>
@@ -39,6 +39,7 @@ export default function DrugOverdosePage() {
       </div>
 
       <CTAButton label="Call 000" href="tel:000" variant="danger" fullWidth />
+      <Link href="/pages/scenarios/a-drug-overdose/resources" className="block text-center text-blue-700 underline">More resources</Link>
     </main>
   )
 }

@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { CTAButton } from '@/components/ui/CTAButton'
+import { CTAButton } from '@/components/CTAButton'
 import { loadScenariosFromCSV } from '@/lib/loadCSV'
 import Link from 'next/link'
 

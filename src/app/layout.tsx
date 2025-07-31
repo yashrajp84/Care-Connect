@@ -1,7 +1,6 @@
 import '@/styles/globals.css'
 import type { Metadata } from 'next'
 import { ReactNode } from 'react'
-import { Header } from '@/components/ui/Header'
 import { cn } from '@/lib/utils'
 import { inter } from '@/lib/fonts'
 
@@ -14,7 +13,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={cn(inter.className)}>
       <body className="min-h-screen bg-background text-foreground">
-        <Header />
         {children}
       </body>
     </html>
