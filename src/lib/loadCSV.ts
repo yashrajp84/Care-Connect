@@ -17,7 +17,7 @@ let cache: OfflineSubScenario[] | null = null
 
 export function loadScenariosFromCSV(): OfflineSubScenario[] {
   if (cache) return cache
-  const filePath = path.join(process.cwd(), 'src/assets/data/scenarios.csv')
+  const filePath = path.join(process.cwd(), 'data/scenarios.csv')
   const content = fs.readFileSync(filePath, 'utf8')
   cache = parse(content, {
     columns: true,
