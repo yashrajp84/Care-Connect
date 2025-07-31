@@ -1,7 +1,13 @@
 'use client'
 
 import { FooterNav } from '@/components/FooterNav'
-import type { Scenario } from '@/types/scenario'
+
+interface Scenario {
+  id: string
+  title: string
+  icon: string
+  variant: 'danger' | 'warning' | 'info'
+}
 
 const scenarios: Scenario[] = [
   {
