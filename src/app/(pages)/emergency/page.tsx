@@ -1,4 +1,4 @@
-import { EmergencyCallButton } from '@/components/ui/EmergencyCallButton'
+import { EmergencyCallButton } from '@/components/EmergencyCallButton'
 import { Button } from '@/components/ui/Button'
 
 export default function Emergency() {

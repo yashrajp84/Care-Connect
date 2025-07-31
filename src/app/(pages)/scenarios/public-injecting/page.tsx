@@ -1,6 +1,6 @@
 import config from './config'
-import { CTAButton } from '@/components/ui/CTAButton'
-import { StepAccordion } from '@/components/ui/StepAccordion'
+import { CTAButton } from '@/components/CTAButton'
+import { StepAccordion } from '@/components/StepAccordion'
 
 export default function PublicInjectingPage() {
   if (!config) {
