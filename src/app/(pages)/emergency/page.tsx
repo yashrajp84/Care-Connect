@@ -1,5 +1,5 @@
-import { EmergencyButton } from '@/components/EmergencyButton'
-import { Button } from '@/components/ui/button'
+import { EmergencyCallButton } from '@/components/ui/EmergencyCallButton'
+import { Button } from '@/components/ui/Button'
 
 export default function Emergency() {
   return (
@@ -7,7 +7,7 @@ export default function Emergency() {
       <h1 className="text-2xl font-bold">Emergency Help</h1>
       <p>If you or someone else is in immediate danger, call emergency services.</p>
       <Button variant="destructive">Call 911</Button>
-      <EmergencyButton />
+      <EmergencyCallButton />
     </main>
   )
 }

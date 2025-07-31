@@ -1,4 +1,4 @@
-import { CTAButton } from '@/components/CTAButton'
+import { CTAButton } from '@/components/ui/CTAButton'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { loadScenariosFromCSV } from '@/lib/loadCSV'

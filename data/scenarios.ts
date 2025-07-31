@@ -61,3 +61,8 @@ export const scenarios: Record<string, Scenario> = {
     }
   }
 }
+
+export const scenarioMeta = [
+  { slug: 'a-drug-overdose', title: 'A Drug Overdose', icon: '/icons/noun-emergency-7924115-1.svg' },
+  { slug: 'public-injecting', title: 'Public Injecting', icon: '/icons/noun-warning-7924185-1.svg' }
+] as const

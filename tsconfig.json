@@ -35,6 +35,12 @@
       ],
       "@/types/*": [
         "src/types/*"
+      ],
+      "@/styles/*": [
+        "styles/*"
+      ],
+      "@/data/*": [
+        "data/*"
       ]
     },
     "types": [
