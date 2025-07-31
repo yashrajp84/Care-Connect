@@ -1,6 +1,8 @@
 'use client'
 
-import { FooterNav } from '@/components/FooterNav'
+import { FooterNav } from '@/components/ui/FooterNav'
+import Link from 'next/link'
+import { scenarioMeta } from '@/data/scenarios'
 
 interface Scenario {
   id: string
@@ -9,44 +11,12 @@ interface Scenario {
   variant: 'danger' | 'warning' | 'info'
 }
 
-const scenarios: Scenario[] = [
-  {
-    id: 'overdose',
-    title: 'A Drug Overdose',
-    icon: '/icons/noun-emergency-7924115-1.svg',
-    variant: 'danger',
-  },
-  {
-    id: 'aggressive',
-    title: 'Someone Is Acting Aggressively',
-    icon: '/icons/noun-warning-7924185-1.svg',
-    variant: 'warning',
-  },
-  {
-    id: 'injecting',
-    title: 'Public Injecting',
-    icon: '/icons/noun-warning-7924185-1.svg',
-    variant: 'warning',
-  },
-  {
-    id: 'needle',
-    title: 'Found needle or Equipment',
-    icon: '/icons/noun-warning-7924185-1.svg',
-    variant: 'warning',
-  },
-  {
-    id: 'homelessness',
-    title: 'Homelessness',
-    icon: '/icons/noun-pause-blue-1015651-1.svg',
-    variant: 'info',
-  },
-  {
-    id: 'not-sure',
-    title: 'Not sure',
-    icon: '/icons/noun-pause-blue-1015651-1.svg',
-    variant: 'info',
-  },
-]
+const scenarios: Scenario[] = scenarioMeta.map((m) => ({
+  id: m.slug,
+  title: m.title,
+  icon: m.icon,
+  variant: m.slug === 'a-drug-overdose' ? 'danger' : 'warning',
+}))
 
 export default function Home() {
   return (
@@ -97,13 +67,15 @@ function ScenarioCard({ scenario }: { scenario: Scenario }) {
   }[variant]
 
   return (
-    <div className="bg-white rounded-2xl p-4 shadow-md flex items-start space-x-3 border border-gray-100">
-      <div className={`flex-shrink-0 w-7 h-7 ${iconBgColor}`}>
-        <img src={icon} alt="" className="w-full h-full object-contain" />
+    <Link href={`/scenarios/${scenario.id}`} className="block">
+      <div className="bg-white rounded-2xl p-4 shadow-md flex items-start space-x-3 border border-gray-100">
+        <div className={`flex-shrink-0 w-7 h-7 ${iconBgColor}`}>
+          <img src={icon} alt="" className="w-full h-full object-contain" />
+        </div>
+        <div className="text-left">
+          <p className="text-[17px] font-semibold text-[#003366] leading-tight">{title}</p>
+        </div>
       </div>
-      <div className="text-left">
-        <p className="text-[17px] font-semibold text-[#003366] leading-tight">{title}</p>
-      </div>
-    </div>
+    </Link>
   )
 }

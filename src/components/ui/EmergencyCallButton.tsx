@@ -3,9 +3,9 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Phone } from 'lucide-react'
-import styles from './EmergencyButton.module.css'
+import styles from './EmergencyCallButton.module.css'
 
-export function EmergencyButton() {
+export function EmergencyCallButton() {
   return (
     <motion.div
       className={styles.container}

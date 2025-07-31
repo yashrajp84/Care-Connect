@@ -1,0 +1,26 @@
+.accordion {
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius-default);
+}
+
+.header {
+  width: 100%;
+  padding: var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+}
+
+.body {
+  padding: var(--spacing-md);
+  background-color: #f9fafb;
+}
+
+.icon {
+  transition: transform 0.2s ease;
+}
+
+.iconOpen {
+  transform: rotate(180deg);
+}
