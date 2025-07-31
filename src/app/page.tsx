@@ -13,37 +13,37 @@ const scenarios: Scenario[] = [
   {
     id: 'overdose',
     title: 'A Drug Overdose',
-    icon: 'src/assets/icons/noun-emergency-7924115 1.svg', // Replace with correct path
+    icon: '/icons/noun-emergency-7924115-1.svg',
     variant: 'danger',
   },
   {
     id: 'aggressive',
     title: 'Someone Is Acting Aggressively',
-    icon: 'src/assets/icons/noun-warning-7924185 1.svg',
+    icon: '/icons/noun-warning-7924185-1.svg',
     variant: 'warning',
   },
   {
     id: 'injecting',
     title: 'Public Injecting',
-    icon: 'src/assets/icons/noun-warning-7924185 1.svg',
+    icon: '/icons/noun-warning-7924185-1.svg',
     variant: 'warning',
   },
   {
     id: 'needle',
     title: 'Found needle or Equipment',
-    icon: 'src/assets/icons/noun-warning-7924185 1.svg',
+    icon: '/icons/noun-warning-7924185-1.svg',
     variant: 'warning',
   },
   {
     id: 'homelessness',
     title: 'Homelessness',
-    icon: 'src/assets/icons/noun-pause-blue-1015651 1.svg',
+    icon: '/icons/noun-pause-blue-1015651-1.svg',
     variant: 'info',
   },
   {
     id: 'not-sure',
     title: 'Not sure',
-    icon: 'src/assets/icons/noun-pause-blue-1015651 1.svg',
+    icon: '/icons/noun-pause-blue-1015651-1.svg',
     variant: 'info',
   },
 ]
